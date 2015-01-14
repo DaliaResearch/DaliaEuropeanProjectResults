@@ -2,16 +2,13 @@ body, div, p {
   margin: 0;
   padding: 0;
 }
-body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
+body, h1, h2, p, span {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
   letter-spacing: 0.0625em;
 }
 a {
   text-decoration: none;
-}
-#back-to-tutorial {
-  margin-left: 100px;
 }
 .slides-container {
   position: absolute;
@@ -28,33 +25,92 @@ a {
   height: 100%;
   overflow: hidden;
 }
-.slide .centered {
-  width: 60%;
-  margin: 200px auto 0;
-}
-.slide .centered h1 {
-  text-align: center;
-}
-.slide .centered p {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 20px;
-}
-#slide-1 {
-  background-color: #FFFFFF;
-}
-#slide-2 {
-  background-color: #45959b;
-}
-#slide-3 {
-  background-color: #778899;
-}
-#slide-4 {
-  color: #FFFFFF;
-  background-color: #291F37;
-}
-.go-prev, .go-next {
+.go-next {
   cursor: pointer;
-  font-weight: bold;
-  text-decoration: underline;
+  margin-top: 15%;
+  display: inline-block;
+  font-size: 2em;
+}
+.vcenter {
+  position: relative;
+  top: 48%;
+  transform: translateY(-48%);
+}
+/* Styling each slide differently */
+#start {
+  background: black;
+  color: white;
+}
+#quick_facts div {
+  font-size: 1.2em;
+  margin-top: 35px;
+}
+#quick_facts div>span {
+  font-size: 1.8em;
+}
+#quick_facts>div {
+  margin-top: 65px;
+}
+#quick_facts h1 {
+  font-size: 2.5em;
+  border-bottom: thin solid grey;
+  margin: 0 25px;
+  padding-bottom: 30px;
+}
+#topics .row div {
+  font-size: 2.8em;
+  border: 2px solid;
+  border-color: rgba(211,211,211, 0.5);
+  padding: 30px;
+  margin-right: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#brands {
+  background: url(images/brands_low.jpg) no-repeat center center fixed;
+}
+#football {
+  background: url(images/football_low.jpg) no-repeat center center fixed;
+}
+#politics {
+  background: url(images/politics_low.jpg) no-repeat center center fixed;
+}
+#world {
+  background: url(images/world_low.jpg) no-repeat center center fixed;
+}
+#people {
+  background: url(images/people_low.jpg) no-repeat center center fixed;
+}
+#wishes {
+  background: url(images/wishes_low.jpg) no-repeat center center fixed;
+}
+.topic_slides {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.topic_slides .row div {
+  color: white;
+  font-size: 2.8em;
+}
+.topic_slides .row:first-child {
+  border-bottom: thin solid white;
+  margin: 0 25px;
+}
+.topic_slides .row:nth-child(2) {
+  margin-top: 15%;
+}
+.topic_slides .row:last-child {
+  margin-top: 15%;
+}
+.topic_slides .row:last-child div {
+  font-size: 1.8em;
+}
+.topic_slides .row:first-child div {
+  font-size: 2.5em;
+  margin-top: 10%;
+  padding-bottom: 30px;
+  padding-right: 0px;
+  text-align: right;
 }

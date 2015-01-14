@@ -11,6 +11,7 @@ $(function() {
   var $slidesContainer = $(".slides-container");
   var $slides = $(".slide");
   var $currentSlide = $slides.first();
+  var $nav_topics = $('#topics .row div');
 
   //Animating flag - is our app animating
   var isAnimating = false;
@@ -36,6 +37,7 @@ $(function() {
   $navButtons.on("click", onNavButtonClick);
   $navGoPrev.on("click", goToPrevSlide);
   $navGoNext.on("click", goToNextSlide);
+  $nav_topics.on("click", goToSpecificSlide);
 
 
   /*
@@ -76,7 +78,6 @@ $(function() {
   *   When user scrolls with the mouse, we have to change slides
   * */
   function onMouseWheel(event) {
-    console.log("slides", $slides);
     //Normalize event wheel delta
     var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
 
@@ -106,6 +107,11 @@ $(function() {
     if($currentSlide.next().length) {
       goToSlide($currentSlide.next());
     }
+  }
+
+  function goToSpecificSlide(event) {
+    var slide_id = $(event.target).data('id');
+    goToSlide($(_.find($slides, function(element){return element.id == slide_id})));
   }
 
   /*
