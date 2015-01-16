@@ -2,13 +2,11 @@ body, div, p {
   margin: 0;
   padding: 0;
 }
-body, h1, h2, p, span {
+body, h1, h2, p, span, div {
   font-family: 'Open Sans', sans-serif;
   font-weight: 100;
   letter-spacing: 0.0625em;
-}
-a {
-  text-decoration: none;
+  font-size: 30px;
 }
 .slides-container {
   position: absolute;
@@ -27,9 +25,11 @@ a {
 }
 .go-next {
   cursor: pointer;
-  margin-top: 15%;
+  position: absolute;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1em;
+  top: 88%;
+  left: 50%;
 }
 .vcenter {
   position: relative;
@@ -41,24 +41,27 @@ a {
   background: black;
   color: white;
 }
-#quick_facts div {
+#start div {
   font-size: 1.2em;
+  padding: 20px;
+}
+#quick_facts div {
   margin-top: 35px;
 }
 #quick_facts div>span {
-  font-size: 1.8em;
+  font-size: 1.2em;
 }
 #quick_facts>div {
   margin-top: 65px;
 }
 #quick_facts h1 {
-  font-size: 2.5em;
+  font-size: 1.5em;
   border-bottom: thin solid grey;
   margin: 0 25px;
   padding-bottom: 30px;
 }
 #topics .row div {
-  font-size: 2.8em;
+  font-size: 1.4em;
   border: 2px solid;
   border-color: rgba(211,211,211, 0.5);
   padding: 30px;
@@ -66,51 +69,150 @@ a {
   margin-top: 20px;
   cursor: pointer;
 }
+#wishes .row:last-child div {
+  font-size: 1.7em;
+}
+#wishes .row:last-child span {
+  font-size: 0.6em;
+  font-style: italic;
+}
+/* General slide look and feel */
+.topic_slides .row div {
+  color: white;
+}
+
+/* Hash-Header within topic-slides */
+.topic_slides .row:first-child {
+  border-bottom: thin solid white;
+  margin: 0 25px;
+}
+.topic_slides .row:first-child div {
+  font-size: 1.5em;
+  margin-top: 10%;
+  padding-bottom: 30px;
+  padding-right: 0px;
+  text-align: right;
+}
+
+
+/* content for topic slides */
+.topic_slides .row:nth-child(2) {
+  margin-top: 15%;
+}
+.topic_slides .row:nth-child(2) div {
+  font-size: 1.5em;
+}
+
+
+/* link to view more results */
+.topic_slides .row:last-child {
+  margin-top: 20%;
+}
+.topic_slides .row:last-child div {
+  font-size: 0.8em;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+  /* Start page */
+  #start div {
+    font-size: 0.9em;
+    padding: 20px;
+  }
+  #start .vcenter {
+    top: 25%;
+    transform: translateY(-35%);
+  }
+
+  /* Second slide, quick facts */
+  #quick_facts div {
+    margin-top: 10px;
+  }
+  #quick_facts div>span {
+    font-size: 0.6em;
+  }
+  #quick_facts>div {
+    margin-top: 42px;
+  }
+  #quick_facts h1 {
+    font-size: 1em;
+    border-bottom: thin solid grey;
+    margin: 0 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+  #quick_facts .row:first-child div {
+    margin-top: 10px;
+  }
+  #quick_facts .row div {
+    line-height: 18px;
+    margin-top: 15px;
+  }
+
+  /* third slide, topics*/
+  #topics .row div {
+    font-size: 0.8em;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  #topics .vcenter {
+    top: 2.5em;
+  }
+
+  .topic_slides .row:first-child div {
+    font-size: 0.9em;
+  }
+  .topic_slides .row:nth-child(2) div {
+    font-size: 0.7em;
+    padding: 20px;
+  }
+  .topic_slides .row:last-child div
+   {
+    font-size: 0.5em;
+  }
+  #wishes .row:last-child div {
+  font-size: 0.9em;
+  padding: 20px;
+  }
+  #wishes .row:last-child span {
+    font-size: 0.5em;
+    font-style: italic;
+  }
+}
+
+
+
+
+/* Background for slides */
 #brands {
-  background: url(images/brands_low.jpg) no-repeat center center fixed;
+  background: url(images/brands.jpg) no-repeat center center fixed;
 }
 #football {
-  background: url(images/football_low.jpg) no-repeat center center fixed;
+  background: url(images/football.jpg) no-repeat center center fixed;
 }
 #politics {
-  background: url(images/politics_low.jpg) no-repeat center center fixed;
+  background: url(images/politics.jpg) no-repeat center center fixed;
 }
 #world {
-  background: url(images/world_low.jpg) no-repeat center center fixed;
+  background: url(images/world.jpg) no-repeat center center fixed;
 }
 #people {
-  background: url(images/people_low.jpg) no-repeat center center fixed;
+  background: url(images/people.jpg) no-repeat center center fixed;
 }
 #wishes {
-  background: url(images/wishes_low.jpg) no-repeat center center fixed;
+  background: url(images/wishes.jpg) no-repeat center center fixed;
 }
 .topic_slides {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-.topic_slides .row div {
-  color: white;
-  font-size: 2.8em;
-}
-.topic_slides .row:first-child {
-  border-bottom: thin solid white;
-  margin: 0 25px;
-}
-.topic_slides .row:nth-child(2) {
-  margin-top: 15%;
-}
-.topic_slides .row:last-child {
-  margin-top: 15%;
-}
-.topic_slides .row:last-child div {
-  font-size: 1.8em;
-}
-.topic_slides .row:first-child div {
-  font-size: 2.5em;
-  margin-top: 10%;
-  padding-bottom: 30px;
-  padding-right: 0px;
-  text-align: right;
 }

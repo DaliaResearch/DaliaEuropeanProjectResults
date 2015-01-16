@@ -1,4 +1,5 @@
 $(function() {
+  $('.ui-loader').hide();
   //First the variables our app is going to use need to be declared
 
   //References to DOM elements
@@ -8,6 +9,8 @@ $(function() {
   var $navButtons = $("nav a").filter("[href^=#]");
   var $navGoPrev = $(".go-prev");
   var $navGoNext = $(".go-next");
+  var $mobileGoNext = $(".mobile-go-next");
+  var $mobileGoPrev = $(".mobile-go-previous");
   var $slidesContainer = $(".slides-container");
   var $slides = $(".slide");
   var $currentSlide = $slides.first();
@@ -15,6 +18,8 @@ $(function() {
 
   //Animating flag - is our app animating
   var isAnimating = false;
+
+  var startTouch;
 
   //The height of the window
   var pageHeight = $window.innerHeight();
@@ -33,10 +38,14 @@ $(function() {
   * */
   $window.on("resize", onResize).resize();
   $window.on("mousewheel DOMMouseScroll", onMouseWheel);
+  $window.bind('touchstart', updateTouchPoint);
+  $window.on("touchmove", onTouchMove);
   $document.on("keydown", onKeyDown);
   $navButtons.on("click", onNavButtonClick);
   $navGoPrev.on("click", goToPrevSlide);
   $navGoNext.on("click", goToNextSlide);
+  $mobileGoNext.on("click", goToNextSlide);
+  $mobileGoPrev.on("click", goToPrevSlide);
   $nav_topics.on("click", goToSpecificSlide);
 
 
@@ -54,6 +63,19 @@ $(function() {
     if($slide.length) {
       goToSlide($slide);
       event.preventDefault();
+    }
+  }
+
+  function updateTouchPoint(event) {
+    startTouch = event.originalEvent.touches[0].clientY;
+  }
+
+  function onTouchMove(event) {
+  var endTouch = event.originalEvent.changedTouches[0].clientY;
+    if (startTouch > endTouch) {
+      goToNextSlide();
+    } else {
+      goToPrevSlide();
     }
   }
 
@@ -91,10 +113,22 @@ $(function() {
     event.preventDefault();
   }
 
+  function onTouchScroll(event) {
+    //If the user scrolled up, it goes to previous slide, otherwise - to next slide
+    if($(this).scrollTop() < -1) {
+      goToNextSlide();
+    } else {
+      goToPrevSlide();
+    }
+
+    event.preventDefault();
+  }
+
   /*
   *   If there's a previous slide, slide to it
   * */
   function goToPrevSlide() {
+    console.log("go to back slide");
     if($currentSlide.prev().length) {
       goToSlide($currentSlide.prev());
     }
@@ -104,6 +138,7 @@ $(function() {
   *   If there's a next slide, slide to it
   * */
   function goToNextSlide() {
+    console.log("go next clicked");
     if($currentSlide.next().length) {
       goToSlide($currentSlide.next());
     }
