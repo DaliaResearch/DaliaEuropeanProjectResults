@@ -20,6 +20,7 @@ $(function() {
   var isAnimating = false;
 
   var startTouch;
+  var start = 0;
 
   //The height of the window
   var pageHeight = $window.innerHeight();
@@ -128,7 +129,6 @@ $(function() {
   *   If there's a previous slide, slide to it
   * */
   function goToPrevSlide() {
-    console.log("go to back slide");
     if($currentSlide.prev().length) {
       goToSlide($currentSlide.prev());
     }
@@ -138,7 +138,6 @@ $(function() {
   *   If there's a next slide, slide to it
   * */
   function goToNextSlide() {
-    console.log("go next clicked");
     if($currentSlide.next().length) {
       goToSlide($currentSlide.next());
     }
@@ -158,6 +157,11 @@ $(function() {
       //setting animating flag to true
       isAnimating = true;
       $currentSlide = $slide;
+
+      if($currentSlide[0].id === "wishes" && start === 0) {
+        show_quotes();
+        start = 1;
+      }
 
       //Sliding to current slide
       TweenLite.to($slidesContainer, 1, {scrollTo: {y: pageHeight * $currentSlide.index() }, onComplete: onSlideChangeEnd, onCompleteScope: this});
@@ -199,4 +203,22 @@ $(function() {
     }
 
   }
+
+  function show_quotes() {
+
+    var quotes = $(".quotes");
+    var quoteIndex = -1;
+
+    function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+            .fadeIn(2000)
+            .delay(2000)
+            .fadeOut(2000, showNextQuote);
+    }
+
+    showNextQuote();
+
+  }
+
 });
