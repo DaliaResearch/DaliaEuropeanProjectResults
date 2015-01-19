@@ -1,5 +1,8 @@
-.quotes {display: none;}
-
+/*-- Hide quotes in the beginning -----*/
+.quotes {
+  display: none;
+}
+/*-------------------------------------*/
 body, div, p {
   margin: 0;
   padding: 0;
@@ -91,12 +94,10 @@ body, h1, h2, p, span, div {
   width: 100%;
   height: 100%;
 }
-
 /* General slide look and feel */
 .topic_slides .row div {
   color: white;
 }
-
 /* Hash-Header within topic-slides */
 .topic_slides .row:first-child {
   border-bottom: thin solid white;
@@ -109,8 +110,6 @@ body, h1, h2, p, span, div {
   padding-right: 0px;
   text-align: right;
 }
-
-
 /* content for topic slides */
 .topic_slides .row:nth-child(2) {
   margin-top: 5em;
@@ -118,8 +117,6 @@ body, h1, h2, p, span, div {
 .topic_slides .row:nth-child(2) div {
   font-size: 1.5em;
 }
-
-
 /* link to view more results */
 .topic_slides .row:last-child {
   margin-top: 5em;
@@ -127,14 +124,6 @@ body, h1, h2, p, span, div {
 .topic_slides .row:last-child div {
   font-size: 0.8em;
 }
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 400px) {
   .go-next {
@@ -149,7 +138,6 @@ body, h1, h2, p, span, div {
     top: 25%;
     transform: translateY(-35%);
   }
-
   /* Second slide, quick facts */
   #quick_facts div {
     margin-top: 10px;
@@ -186,7 +174,6 @@ body, h1, h2, p, span, div {
     top: 0.5em;
     transform: translateY(0.5em);
   }
-
   .topic_slides .row:first-child div {
     font-size: 0.9em;
   }
@@ -214,10 +201,6 @@ body, h1, h2, p, span, div {
     font-style: italic;
   }
 }
-
-
-
-
 /* Background for slides */
 #brands {
   background: url(images/brands.jpg) no-repeat center center fixed;
