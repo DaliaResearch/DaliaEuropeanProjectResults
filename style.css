@@ -94,6 +94,9 @@ body, h1, h2, p, span, div {
   width: 100%;
   height: 100%;
 }
+#contact {
+  background: black;
+}
 /* General slide look and feel */
 .topic_slides .row div {
   color: white;
