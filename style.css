@@ -13,6 +13,19 @@ body, h1, h2, p, span, div {
   letter-spacing: 0.0625em;
   font-size: 30px;
 }
+a {
+  text-decoration: underline;
+  color: white;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: white;
+}
+a:visited {
+  color: white;
+}
 .slides-container {
   position: absolute;
   left: 0;
