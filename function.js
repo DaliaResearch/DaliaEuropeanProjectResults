@@ -221,4 +221,7 @@ $(function() {
 
   }
 
+  //hide created-by from cartoDB
+  $('.cartodb-text').hide();
+
 });

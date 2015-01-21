@@ -41,6 +41,11 @@ a:visited {
   height: 100%;
   overflow: hidden;
 }
+.vcenter {
+  position: relative;
+  top: 48%;
+  transform: translateY(-48%);
+}
 .go-next {
   cursor: pointer;
   position: absolute;
@@ -53,15 +58,41 @@ a:visited {
   color: white;
 }
 .map_slide .go-next {
-  top: 95%;
+  top: 92%;
 }
-.vcenter {
-  position: relative;
-  top: 48%;
-  transform: translateY(-48%);
+.map_header {
+  padding: 15px 0px;
 }
-.map_slide .row:first-child {
-  padding: 5px 0px;
+.topic_slides {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* General slide look and feel */
+.topic_slides .row div {
+  color: white;
+}
+/* Hash-Header within topic-slides */
+.topic_slides .row:first-child {
+  border-bottom: thin solid white;
+  margin: 0 1em;
+}
+.topic_slides .row:first-child div {
+  font-size: 1.5em;
+  margin-top: 10%;
+  padding-bottom: 30px;
+  padding-right: 0px;
+  text-align: right;
+}
+/* content for topic slides */
+.topic_slides .row:nth-child(2) {
+  margin-top: 4em;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.topic_slides .row:nth-child(2) div {
+  font-size: 1.5em;
 }
 /* Styling each slide differently */
 #start {
@@ -87,14 +118,32 @@ a:visited {
   margin: 0 25px;
   padding-bottom: 30px;
 }
-#topics .row div {
-  font-size: 1.4em;
-  border: 2px solid;
-  border-color: rgba(211,211,211, 0.5);
-  padding: 30px;
-  margin-right: 10px;
-  margin-top: 20px;
-  cursor: pointer;
+#map .row iframe {
+  width: 100%;
+  height: 100%;
+}
+#results {
+  background: black;
+  color: white;
+}
+#football {
+  background: url(images/football.jpg) no-repeat center center fixed;
+}
+/* Background for slides */
+#brands {
+  background: url(images/brands.jpg) no-repeat center center fixed;
+}
+#politics {
+  background: url(images/politics.jpg) no-repeat center center fixed;
+}
+#people {
+  background: url(images/people.jpg) no-repeat center center fixed;
+}
+#world {
+  background: url(images/world.jpg) no-repeat center center fixed;
+}
+#wishes {
+  background: url(images/wishes.jpg) no-repeat center center fixed;
 }
 #wishes .row:last-child div {
   font-size: 1.7em;
@@ -103,92 +152,14 @@ a:visited {
   font-size: 0.6em;
   font-style: italic;
 }
-#map .row iframe {
-  width: 100%;
-  height: 100%;
-}
-#contact {
-  background: black;
-}
-/* General slide look and feel */
-.topic_slides .row div {
-  color: white;
-}
-/* Hash-Header within topic-slides */
-.topic_slides .row:first-child {
-  border-bottom: thin solid white;
-  margin: 0 1em;
-}
-.topic_slides .row:first-child div {
-  font-size: 1.5em;
-  margin-top: 10%;
-  padding-bottom: 30px;
-  padding-right: 0px;
-  text-align: right;
-}
-/* content for topic slides */
-.topic_slides .row:nth-child(2) {
-  margin-top: 5em;
-}
-.topic_slides .row:nth-child(2) div {
-  font-size: 1.5em;
-}
-/* link to view more results */
-.topic_slides .row:last-child {
-  margin-top: 5em;
-}
-.topic_slides .row:last-child div {
-  font-size: 0.8em;
-}
+
+
 
 @media screen and (max-width: 400px) {
   .go-next {
-    left: 40%;
-  }
-  /* Start page */
-  #start div {
-    font-size: 0.9em;
-    padding: 20px;
-  }
-  #start .vcenter {
-    top: 25%;
-    transform: translateY(-35%);
-  }
-  /* Second slide, quick facts */
-  #quick_facts div {
-    margin-top: 10px;
-  }
-  #quick_facts div>span {
+    left: 43%;
     font-size: 0.6em;
-  }
-  #quick_facts>div {
-    margin-top: 30px;
-  }
-  #quick_facts h1 {
-    font-size: 1em;
-    border-bottom: thin solid grey;
-    margin: 0 10px;
-    padding-bottom: 10px;
-    margin-top: 10px;
-  }
-  #quick_facts .row:first-child div {
-    margin-top: 10px;
-  }
-  #quick_facts .row div {
-    line-height: 18px;
-    margin-top: 15px;
-  }
-
-  /* third slide, topics*/
-  #topics .row div {
-    font-size: 0.8em;
-    padding: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-  #topics .vcenter {
-    top: 0.5em;
-    transform: translateY(0.5em);
+    top: 92%;
   }
   .topic_slides .row:first-child div {
     font-size: 0.9em;
@@ -198,15 +169,48 @@ a:visited {
     padding: 20px;
   }
   .topic_slides .row:nth-child(2) {
-    margin-top: 2em;
+    margin-top: 0.2em;
   }
-  .topic_slides .row:last-child div
-   {
-    font-size: 0.5em;
-    margin-top: 2em;
+  .map_header {
+    font-size: 0.7em;
+    padding: 0px;
   }
-  .topic_slides .row:last-child {
-    margin-top: 2em;
+  /* Start page */
+  #start div {
+    font-size: 0.9em;
+    padding: 20px;
+  }
+  #start .vcenter {
+    top: 18%;
+    transform: translateY(-18%);
+  }
+  /* Second slide, quick facts */
+  #quick_facts div {
+    margin-top: 1px;
+  }
+  #quick_facts div>span {
+    font-size: 0.6em;
+  }
+  #quick_facts>div {
+    margin-top: 10px;
+  }
+  #quick_facts h1 {
+    font-size: 1em;
+    border-bottom: thin solid grey;
+    margin: 0 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+  #quick_facts .row:first-child div {
+    margin-top: 9px;
+  }
+  #quick_facts .row div {
+    line-height: 18px;
+    margin-top: 10px;
+  }
+  #results .vcenter {
+    top: 35%;
+    transform: translateY(-35%);
   }
   #wishes .row:last-child div {
     font-size: 0.9em;
@@ -216,29 +220,4 @@ a:visited {
     font-size: 0.5em;
     font-style: italic;
   }
-}
-/* Background for slides */
-#brands {
-  background: url(images/brands.jpg) no-repeat center center fixed;
-}
-#football {
-  background: url(images/football.jpg) no-repeat center center fixed;
-}
-#politics {
-  background: url(images/politics.jpg) no-repeat center center fixed;
-}
-#world {
-  background: url(images/world.jpg) no-repeat center center fixed;
-}
-#people {
-  background: url(images/people.jpg) no-repeat center center fixed;
-}
-#wishes {
-  background: url(images/wishes.jpg) no-repeat center center fixed;
-}
-.topic_slides {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
