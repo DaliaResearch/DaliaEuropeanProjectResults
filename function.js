@@ -1,4 +1,6 @@
 $(function() {
+  console.log("[DEBUG] Slides function v0.0.1");
+
   $('.ui-loader').hide();
   //First the variables our app is going to use need to be declared
 
@@ -171,6 +173,20 @@ $(function() {
 
       TweenLite.to($navButtons.filter("[href=#" + $currentSlide.attr("id") + "]"), 0.5, {className: "+=active"});
 
+      sendGAEvent($currentSlide.attr("id"));
+    }
+  }
+
+  /*
+  * GoogleAnalytics events
+  * */
+  function sendGAEvent(slide_id){
+    console.log("[DEBUG] in slide ", slide_id);
+    ga('send', 'pageview', "/slides/" + slide_id);
+
+    if(slide_id == "wishes") {
+      console.log("[DEBUG] event 'completed'");
+      ga('send', 'event', 'slides', 'completed', 'user', 1);
     }
   }
 
